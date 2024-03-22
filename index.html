@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AJAX con jQuery</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      // URL del servidor al que haremos la solicitud
+      const url = 'http://187.188.87.254:8090/v/v.json';
+
+      // Hacer la solicitud AJAX con jQuery
+      $.ajax({
+        url: url, // URL de la solicitud
+        method: 'GET', // Método de la solicitud (GET, POST, etc.)
+        dataType: 'json', // Tipo de datos esperados en la respuesta
+        success: function(data) {
+          // Manejar los datos recibidos
+          console.log('Datos recibidos:', data);
+        },
+        error: function(xhr, status, error) {
+          // Manejar errores de la solicitud
+          console.error('Hubo un problema con la solicitud AJAX:', error);
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <!-- Contenido HTML opcional -->
+</body>
+</html>
